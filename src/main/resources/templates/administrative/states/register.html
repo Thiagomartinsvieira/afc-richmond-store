@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="https://thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+</head>
+
+
+<body>
+
+<form action="/saveState" th:object="${state}" method="post">
+
+  <label>State Name</label>
+  <input type="text" th:field="*{name}" />
+
+  <label>State Acronym</label>
+  <input type="text" th:field="*{acronym}"/>
+
+  <input type="hidden" th:field="*{id}">
+
+  <button type="submit">Save</button>
+
+</form>
+
+</body>
+
+</html>
