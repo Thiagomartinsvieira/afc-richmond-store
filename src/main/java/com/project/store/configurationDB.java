@@ -2,6 +2,10 @@ package com.project.store;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.vendor.Database;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 import javax.sql.DataSource;
 
@@ -11,7 +15,7 @@ public class configurationDB {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver"); //declara as configurações de acesso
-        dataSource.setUrl("jdbc:postgresql://localhost:5433/store");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/store");
         dataSource.setUsername("root");// User
         dataSource.setPassword("1234");//Password
         return dataSource;
